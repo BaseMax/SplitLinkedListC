@@ -39,7 +39,7 @@ void addNode(struct LinkedList* list, struct Node* newNode) {
 }
 
 // Split a linked list into two linked lists
-void splitLinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2) {
+void split2LinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2) {
     struct Node* current = list->head;
     while (current != NULL) {
         struct Node* newNode = createNode(current->data);
@@ -51,6 +51,23 @@ void splitLinkedList(struct LinkedList* list, struct LinkedList* list1, struct L
         current = current->next;
     }
 }
+
+// Split a linked list into three linked lists
+void split3LinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2, struct LinkedList* list3) {
+    struct Node* current = list->head;
+    while (current != NULL) {
+        struct Node* newNode = createNode(current->data);
+        if (current->data % 3 == 0) {
+            addNode(list1, newNode);
+        } else if (current->data % 3 == 1) {
+            addNode(list2, newNode);
+        } else {
+            addNode(list3, newNode);
+        }
+        current = current->next;
+    }
+}
+
 void printList(struct LinkedList* list) {
     struct Node* current = list->head;
     while (current != NULL) {
@@ -78,7 +95,7 @@ int main(int argc, char** argv) {
     // Split the linked list into two linked lists
     struct LinkedList* list1 = createLinkedList();
     struct LinkedList* list2 = createLinkedList();
-    splitLinkedList(list, list1, list2);
+    split2LinkedList(list, list1, list2);
 
     // Print linked lists
     printf("List: ");
@@ -89,6 +106,25 @@ int main(int argc, char** argv) {
 
     printf("List 2: ");
     printList(list2);
+
+    // Split the linked list into three linked lists
+    list1 = createLinkedList();
+    list2 = createLinkedList();
+    struct LinkedList* list3 = createLinkedList();
+    split3LinkedList(list, list1, list2, list3);
+
+    // Print linked lists
+    printf("List: ");
+    printList(list);
+
+    printf("List 1: ");
+    printList(list1);
+
+    printf("List 2: ");
+    printList(list2);
+
+    printf("List 3: ");
+    printList(list3);
 
     return 0;
 }
