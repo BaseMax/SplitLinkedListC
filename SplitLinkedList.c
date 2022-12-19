@@ -68,6 +68,7 @@ void split3LinkedList(struct LinkedList* list, struct LinkedList* list1, struct 
     }
 }
 
+// Merge two linked lists into one linked list
 void merge2LinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2) {
     struct Node* current1 = list1->head;
     struct Node* current2 = list2->head;
@@ -81,6 +82,7 @@ void merge2LinkedList(struct LinkedList* list, struct LinkedList* list1, struct 
     }
 }
 
+// Merge three linked lists into one linked list
 void merge3LinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2, struct LinkedList* list3) {
     struct Node* current1 = list1->head;
     struct Node* current2 = list2->head;
@@ -99,6 +101,7 @@ void merge3LinkedList(struct LinkedList* list, struct LinkedList* list1, struct 
     }
 }
 
+// Sort a linked list
 void sortLinkedList(struct LinkedList* list) {
     struct Node* current = list->head;
     while (current != NULL) {
@@ -115,6 +118,7 @@ void sortLinkedList(struct LinkedList* list) {
     }
 }
 
+// Sort a linked list recursively
 void sortLinkedListRecursive(struct Node* current) {
     if (current == NULL) {
         return;
@@ -131,6 +135,7 @@ void sortLinkedListRecursive(struct Node* current) {
     sortLinkedListRecursive(current->next);
 }
 
+// Print a linked list
 void printList(struct LinkedList* list) {
     struct Node* current = list->head;
     while (current != NULL) {
@@ -140,6 +145,7 @@ void printList(struct LinkedList* list) {
     printf("\n");
 }
 
+// Main function
 int main(int argc, char** argv) {
     // Create a linked list
     struct LinkedList* list = createLinkedList();
