@@ -1,11 +1,19 @@
 # Split Linked-List C
 
-This is a simple implementation of a linked-list in C. It is a simple example of how to use a linked-list in C. It's just a simple example to show how to use a linked-list in C. There are two algorithms in this project:
+This is a simple implementation of a linked-list in C. It is a simple example of how to use a linked-list in C. It's just a simple example to show how to use a linked-list in C.
 
+There are a lot of functions in this project. You can use them in your project:
+
+- Add a node to the linked-list
+- Create a node
+- Create a linked-list
 - Split a linked-list into two linked-lists
 - Split a linked-list into three linked-lists
 - Merge two linked-lists into one linked-list
 - Merge three linked-lists into one linked-list
+- Sort a linked-list
+- Sort a linked-list (recursive)
+- Print a linked-list
 
 ## How to use
 
