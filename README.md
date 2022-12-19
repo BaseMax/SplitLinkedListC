@@ -18,24 +18,10 @@ There are a lot of functions in this project. You can use them in your project:
 ## How to use
 
 ```c
-// Create a linked list
-struct LinkedList* list = createLinkedList();
-
-// Add some nodes to the linked list
-addNode(list, createNode(1));
-addNode(list, createNode(2));
-addNode(list, createNode(3));
-addNode(list, createNode(4));
-addNode(list, createNode(5));
-addNode(list, createNode(6));
-addNode(list, createNode(7));
-addNode(list, createNode(8));
-addNode(list, createNode(9));
-
 // Split the linked list into two linked lists
 struct LinkedList* list1 = createLinkedList();
 struct LinkedList* list2 = createLinkedList();
-splitLinkedList(list, list1, list2);
+split2LinkedList(list, list1, list2);
 
 // Print linked lists
 printf("List: ");
@@ -46,6 +32,47 @@ printList(list1);
 
 printf("List 2: ");
 printList(list2);
+
+// Merge two linked lists
+struct LinkedList* merge1 = createLinkedList();
+merge2LinkedList(merge1, list1, list2);
+
+printf("Merge 1: ");
+printList(merge1);
+
+// Split the linked list into three linked lists
+list1 = createLinkedList();
+list2 = createLinkedList();
+struct LinkedList* list3 = createLinkedList();
+split3LinkedList(list, list1, list2, list3);
+
+// Print linked lists
+printf("List: ");
+printList(list);
+
+printf("List 1: ");
+printList(list1);
+
+printf("List 2: ");
+printList(list2);
+
+printf("List 3: ");
+printList(list3);
+
+// Merge three linked lists
+struct LinkedList* merge2 = createLinkedList();
+merge3LinkedList(merge2, list1, list2, list3);
+
+printf("Merge 2: ");
+printList(merge2);
+
+printf("Sorted merge 1: ");
+sortLinkedListRecursive(merge2->head);
+printList(merge1);
+
+printf("Sorted merge 2: ");
+sortLinkedList(merge1);
+printList(merge2);
 ```
 
 ## License
