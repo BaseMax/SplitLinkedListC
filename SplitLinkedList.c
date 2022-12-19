@@ -1,3 +1,14 @@
+/**
+ * 
+ * @file SplitLinkedList.c
+ * @author Max Base (maxbasecode@gmail.com)
+ * @brief Split a linked list into two or three linked lists, and merge them into one linked list.
+ * @version 0.1
+ * @date 2022-12-19
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
