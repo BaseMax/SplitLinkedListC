@@ -115,6 +115,22 @@ void sortLinkedList(struct LinkedList* list) {
     }
 }
 
+void sortLinkedListRecursive(struct Node* current) {
+    if (current == NULL) {
+        return;
+    }
+    struct Node* next = current->next;
+    while (next != NULL) {
+        if (current->data > next->data) {
+            int temp = current->data;
+            current->data = next->data;
+            next->data = temp;
+        }
+        next = next->next;
+    }
+    sortLinkedListRecursive(current->next);
+}
+
 void printList(struct LinkedList* list) {
     struct Node* current = list->head;
     while (current != NULL) {
@@ -187,8 +203,12 @@ int main(int argc, char** argv) {
     printf("Merge 2: ");
     printList(merge2);
 
+    printf("Sorted merge 1: ");
+    sortLinkedListRecursive(merge2->head);
+    printList(merge1);
+
     printf("Sorted merge 2: ");
-    sortLinkedList(merge2);
+    sortLinkedList(merge1);
     printList(merge2);
 
     return 0;
