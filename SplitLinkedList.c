@@ -40,8 +40,6 @@ void addNode(struct LinkedList* list, struct Node* newNode) {
 
 // Split a linked list into two linked lists
 void splitLinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2) {
-    list1 = createLinkedList();
-    list2 = createLinkedList();
     struct Node* current = list->head;
     while (current != NULL) {
         struct Node* newNode = createNode(current->data);
