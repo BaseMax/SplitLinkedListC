@@ -68,6 +68,53 @@ void split3LinkedList(struct LinkedList* list, struct LinkedList* list1, struct 
     }
 }
 
+void merge2LinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2) {
+    struct Node* current1 = list1->head;
+    struct Node* current2 = list2->head;
+    while (current1 != NULL) {
+        addNode(list, createNode(current1->data));
+        current1 = current1->next;
+    }
+    while (current2 != NULL) {
+        addNode(list, createNode(current2->data));
+        current2 = current2->next;
+    }
+}
+
+void merge3LinkedList(struct LinkedList* list, struct LinkedList* list1, struct LinkedList* list2, struct LinkedList* list3) {
+    struct Node* current1 = list1->head;
+    struct Node* current2 = list2->head;
+    struct Node* current3 = list3->head;
+    while (current1 != NULL) {
+        addNode(list, createNode(current1->data));
+        current1 = current1->next;
+    }
+    while (current2 != NULL) {
+        addNode(list, createNode(current2->data));
+        current2 = current2->next;
+    }
+    while (current3 != NULL) {
+        addNode(list, createNode(current3->data));
+        current3 = current3->next;
+    }
+}
+
+void sortLinkedList(struct LinkedList* list) {
+    struct Node* current = list->head;
+    while (current != NULL) {
+        struct Node* next = current->next;
+        while (next != NULL) {
+            if (current->data > next->data) {
+                int temp = current->data;
+                current->data = next->data;
+                next->data = temp;
+            }
+            next = next->next;
+        }
+        current = current->next;
+    }
+}
+
 void printList(struct LinkedList* list) {
     struct Node* current = list->head;
     while (current != NULL) {
@@ -107,6 +154,13 @@ int main(int argc, char** argv) {
     printf("List 2: ");
     printList(list2);
 
+    // Merge two linked lists
+    struct LinkedList* merge1 = createLinkedList();
+    merge2LinkedList(merge1, list1, list2);
+
+    printf("Merge 1: ");
+    printList(merge1);
+
     // Split the linked list into three linked lists
     list1 = createLinkedList();
     list2 = createLinkedList();
@@ -125,6 +179,17 @@ int main(int argc, char** argv) {
 
     printf("List 3: ");
     printList(list3);
+
+    // Merge three linked lists
+    struct LinkedList* merge2 = createLinkedList();
+    merge3LinkedList(merge2, list1, list2, list3);
+
+    printf("Merge 2: ");
+    printList(merge2);
+
+    printf("Sorted merge 2: ");
+    sortLinkedList(merge2);
+    printList(merge2);
 
     return 0;
 }
