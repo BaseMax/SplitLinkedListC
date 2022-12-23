@@ -1,6 +1,6 @@
 # Split Linked-List C
 
-This is a simple implementation of a linked-list in C. It is a simple example of how to use a linked-list in C. It's just a simple example to show how to use a linked-list in C.
+This is a simple implementation of a linked-list in C with a few of helper functions for merging two or three linked-lists, spliting a linkedlist to two or three parts, and sorting a linked-list (recursive and non-recursive)
 
 There are a lot of functions in this project. You can use them in your project:
 
